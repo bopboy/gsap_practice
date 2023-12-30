@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tween Control</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <style>
+      body {
+        background-color: grey;
+      }
+      .circle {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 40vw;
+        height: 40vw;
+        border-radius: 50%;
+        background-color: dodgerblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        border: 6px solid black;
+        overflow: hidden;
+      }
+      .bg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 40vw;
+        height: 40vw;
+        border-radius: 50%;
+        background-color: darkblue;
+      }
+      .circle span {
+        color: #fff;
+        font-size: 5vw;
+        position: relative;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle">
+      <div class="bg"></div>
+      <span>hover me</span>
+    </div>
+    <script>
+      const circle = document.querySelector(".circle");
+      const bg = document.querySelector(".bg");
+
+      // 이렇게 하고 경계에서 들락날락하면 circle 은 점점 작아진다.
+      // circle.addEventListener("mouseenter", () => {
+      //   gsap.from(bg, { scale: 0 });
+      //   console.log(gsap.getProperty(bg, "scale"));
+      // });
+      // 그래서 이렇게 해결한다.
+      circle.addEventListener("mouseenter", () => {
+        gsap.fromTo(bg, { scale: 0 }, { scale: 1 });
+        console.log(gsap.getProperty(bg, "scale"));
+      });
+    </script>
+  </body>
+</html>
