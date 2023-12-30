@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stagger</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <style>
+      body {
+        background-color: grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .stage {
+        width: 50vw;
+        height: 50vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        background-color: black;
+      }
+      .box {
+        width: 100px;
+        min-width: 30px;
+        height: 50px;
+        margin: 2vw;
+      }
+      .orange {
+        background-color: orange;
+      }
+      .pink {
+        background-color: hotpink;
+      }
+      .green {
+        background-color: green;
+      }
+      .red {
+        background-color: red;
+      }
+      .blue {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <div class="box orange"></div>
+      <div class="box pink"></div>
+      <div class="box green"></div>
+      <div class="box red"></div>
+      <div class="box blue"></div>
+    </div>
+    <script>
+      gsap.to(".box", {
+        y: -100,
+        stagger: {
+          each: 0.2,
+          from: "center",
+        },
+        repeat: -1,
+        yoyo: true,
+      });
+    </script>
+  </body>
+</html>
