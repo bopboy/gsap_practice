@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tween Ease</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  </head>
+  <style>
+    body {
+      background-color: grey;
+    }
+    .orange {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+    .pink {
+      width: 100px;
+      height: 100px;
+      background-color: hotpink;
+    }
+  </style>
+  <body>
+    <div class="orange"></div>
+    <hr />
+    <div class="pink"></div>
+    <script>
+      gsap.to(".orange", { duration: 3, x: 600, ease: "linear" });
+      gsap.to(".pink", { duration: 3, x: 600, ease:'Bounce.easeInOut' });
+    </script>
+  </body>
+</html>
