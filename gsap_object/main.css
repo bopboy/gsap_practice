@@ -1,0 +1,27 @@
+.tweens,
+.timelines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 100vh; */
+  flex-direction: column;
+}
+
+.staggers {
+  margin: 10px;
+}
+.staggers .box {
+  cursor: pointer;
+}
+
+button {
+  text-transform: none;
+  margin: 0.25rem;
+}
+.nav.light {
+  padding-top: 2rem;
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
